@@ -1,0 +1,7 @@
+Django
+django-ckeditor
+django-js-asset
+python-decouple
+sqlparse
+django-tailwind
+django-tailwind[reload]
