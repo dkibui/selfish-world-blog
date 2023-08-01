@@ -131,8 +131,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "theme/static/css/dist/",
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+STATIC_ROOT = Path(BASE_DIR) / "staticfiles"
+MEDIA_ROOT = Path(BASE_DIR) / "media/"
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 

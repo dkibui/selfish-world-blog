@@ -7,7 +7,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("main.urls")),
     path("blog/", include("blog.urls")),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path("ckeditor/", include("ckeditor_uploader.urls")),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
 

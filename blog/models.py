@@ -20,8 +20,9 @@ class Category(models.Model):
 class Blog(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
-    content = RichTextUploadingField()
     slug = models.SlugField(max_length=255, unique=True)
+    content = RichTextUploadingField()
+    image = models.ImageField(upload_to="uploads/image")
     date_posted = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, default=0, on_delete=models.CASCADE)
@@ -35,6 +36,18 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+
+        # Check for slug collisions and append numeric counter if necessary
+        # counter = 1
+        # original_slug = slugify(self.title)
+        # while Blog.objects.filter(slug=self.slug).exists():
+        #     self.slug = f"{original_slug}-{counter}"
+        #     counter += 1
+
+        super(Blog, self).save(*args, **kwargs)
 
 
 class Article(models.Model):

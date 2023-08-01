@@ -2,16 +2,18 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 
 from .forms import ContactForm
+from blog.models import Blog
 
 
 # Create your views here.
 def index(request):
-    return render(request, "main/index.html")
+    blogs = Blog.objects.all()
+    context = {"blogs": blogs}
+    return render(request, "main/index.html", context=context)
 
 
 def service(request):
     return render(request, "main/service.html")
-
 
 def contact(request):
     form = ContactForm()

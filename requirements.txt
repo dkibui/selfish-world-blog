@@ -5,3 +5,4 @@ python-decouple
 sqlparse
 django-tailwind
 django-tailwind[reload]
+Pillow

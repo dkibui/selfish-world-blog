@@ -1,5 +1,5 @@
-{% extends 'layout/base.html'  %}
-{%  load static %}
+{% extends 'layout/base.html' %}
+{% load static %}
 
 {% block stylesheet %}
 <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -11,44 +11,18 @@
 
 <div class="bg-orange-50">
     <section class="container mx-auto w-11/12 py-14 md:py-24">
-        <div class="flex gap-4 items-center mb-11 md:mb-14">
-            <i class="fa-solid fa-person-digging block text-gray-500"></i>
-            <h2 class="inline-block pb-1 border-b-2 border-gray-500 text-gray-500 text-sm md:text-lg font-normal uppercase ">What we do</h2>
-        </div>
-        <h2 class="text-2xl md:text-4xl max-w-[620px] font-semibold leading-tight md:leading-snug text-gray-800 my-8 md:mb-14">
-            We Empower Human Development Companies Reach Their Full Potential
-        </h2>
-
         <article class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-6 md:gap-x-12 gap-y-7">
+            {% for blog in blogs %}
             <div class="">
-                <i class="fa-solid fa-earth-africa text-5xl mb-4 text-green-300 block mx-auto  md:text-left"></i>
-                <p class="text-base md:text-2xl  md:text-left">
-                    Create a lasting community impact through our expert fundraising, market analysis and strategic planning.
-                </p>
+                <div class="">
+                    <img src="{{ blog.image.url }}" alt="">
+                </div>
+                <h3 class="text-2xl my-2 text-center font-semibold">{{ blog.title }}</h3>
             </div>
-            
-            <div class="">
-                <i class="fa-solid fa-hands-holding-child text-5xl mb-4 text-blue-300 block mx-auto  md:text-left"></i>
-                <p class="text-base md:text-2xl  md:text-left">
-                    Transform lives in the communities you work. Help them exploit the resources within reach.
-                </p>
-            </div>
-            <div class="">
-                <i class="fa-solid fa-hand-fist text-5xl mb-4 text-red-300 block mx-auto  md:text-left"></i>
-                <p class="text-base md:text-2xl  md:text-left">
-                    Make a lasting impact through expert fundraising, market analysis and strategic planning.
-                </p>
-            </div>
-            
-            <div class="">
-                <i class="fa-solid fa-gauge-high text-5xl mb-4 text-orange-300 block mx-auto  md:text-left"></i>
-                <p class="text-base md:text-2xl  md:text-left">
-                    Transform lives in the communities you work. Help them exploit the resources within reach.
-                </p>
-            </div>
+            {% endfor %}
         </article>
     </section>
-  </div>
+</div>
 
 {% include 'main/includes/partners.html' %}
 
@@ -56,12 +30,15 @@
     <div class="container mx-auto w-11/12">
         <div class="flex gap-4 items-center mb-11 md:mb-14">
             <i class="fa-solid fa-link block text-black"></i>
-            <h2 class="inline-block pb-1 border-b-2 border-black text-black text-sm md:text-lg font-normal uppercase">Work with us</h2>
+            <h2 class="inline-block pb-1 border-b-2 border-black text-black text-sm md:text-lg font-normal uppercase">
+                Work with us
+            </h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-[1fr,2fr] gap-x-14 gap-y-10">
             <section class="border border-gray-300 rounded-lg p-4 md:p-0 md:border-0">
                 <p class="text-xl md:text-3xl leading-snug md:leading-normal text-black">
-                    We're dedicated to creating happy customers. We can be relied upon and we are relied upon. We're honest and
+                    We're dedicated to creating happy customers. We can be relied upon and we are relied upon. We're
+                    honest and
                     flexible, we fast-track initiatives to give you certainty of the best outcome.
                 </p>
             </section>
@@ -69,13 +46,15 @@
                 <div class="">
                     <h3 class="text-black text-base md:text-lg font-semibold mt-0 mb-3">Flawless Execution</h3>
                     <p class="text-base md:text-lg">
-                        With know-how and IP we fast-track initiatives and deliver change safely. We enhance performance through digital technology, ensuring your investments deliver optimal value.
+                        With know-how and IP we fast-track initiatives and deliver change safely. We enhance performance
+                        through digital technology, ensuring your investments deliver optimal value.
                     </p>
                 </div>
                 <div class="">
                     <h3 class="text-black text-base md:text-lg font-semibold mt-0 mb-3">Truly Independent</h3>
                     <p class="text-base md:text-lg">
-                        Our advice is for you and you only. We have intimate knowledge of all digital technology vendor landscapes but remain commercially independent at all times.
+                        Our advice is for you and you only. We have intimate knowledge of all digital technology vendor
+                        landscapes but remain commercially independent at all times.
                     </p>
                 </div>
                 <div class="">
@@ -88,7 +67,8 @@
                 <div class="">
                     <h3 class="text-black text-base md:text-lg font-semibold mt-0 mb-3">Market Expertise</h3>
                     <p class="text-base md:text-lg">
-                        An objective guiding voice drawing on intimate knowledge of the digital marketplace, current trends, vendor technology roadmaps and innovation.
+                        An objective guiding voice drawing on intimate knowledge of the digital marketplace, current
+                        trends, vendor technology roadmaps and innovation.
                     </p>
                 </div>
             </section>
@@ -97,8 +77,8 @@
 </article>
 
 <section class="bg-teal-600 py-3 md:py-2">
-    <div class="bg-no-repeat bg-auto bg-center min-h-[460px] flex items-center justify-center"
-        style="background-image:url({% static 'images/global map.png' %})">
+    <div class="bg-no-repeat bg-auto bg-center min-h-[460px] flex items-center justify-center">
+        <!-- style="background-image:url({% static 'images/global map.png' %})" -->
         <div class="container mx-auto w-11/12">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2 justify-center">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-2">
@@ -124,10 +104,11 @@
                     </div>
                 </div>
                 <div class="bg-teal-400 opacity-90 p-6 ">
-                    <img src="{% static 'images/countries.png' %}" alt="Countries where we operate in" class="block max-w-full mx-auto">
+                    <img src="{% static 'images/countries.png' %}" alt="Countries where we operate in"
+                        class="block max-w-full mx-auto">
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </section>
 {% endblock content %}

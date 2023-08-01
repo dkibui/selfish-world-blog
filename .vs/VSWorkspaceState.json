@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CORE",
+    "\\main",
+    "\\main\\templates",
+    "\\main\\templates\\main",
+    "\\templates",
+    "\\templates\\layout",
+    "\\templates\\layout\\includes"
+  ],
+  "SelectedNode": "\\CORE\\settings.py",
+  "PreviewInSolutionExplorer": false
+}
