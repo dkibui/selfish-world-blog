@@ -47,5 +47,11 @@
     {% block script %}
     {% endblock script %}
 </body>
+<script>
+    window.addEventListener('load', () => {
+        // Initialize browser-reload
+        window.browserReload = new BrowserReload();
+    });
+</script>
 
 </html>
