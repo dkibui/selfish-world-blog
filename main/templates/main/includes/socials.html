@@ -1,0 +1,38 @@
+{% load static %}
+
+{% block head %}
+<style>
+  .socials {
+    min-height: 360px;
+    background: url("/static/images/header/socials.jpg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-attachment: fixed;
+  }
+
+  @media (min-width: 720px) {
+    .socials {
+      min-height: 550px;
+    }
+  }
+</style>
+{% endblock head %}
+
+{% block stylesheet %}
+{% endblock stylesheet %}
+
+{% block content %}
+<div class="parallax-container">
+  <div class="socials">
+    <div class="w-11/12 mx-auto text-center my-auto">
+      <h1 class="mb-8 text-3xl md:text-6xl text-white">Keep in touch...</h1>
+      <h2 class="font-normal text-2xl text-black">
+        More exciting content for you
+      </h2>
+      <button class="bg-orange-400 py-4 px-6 rounded text-white mt-10" type="button">Instagram</button>
+      <button class="bg-blue-600 py-4 px-6 rounded text-white mt-10" type="button">Facebook</button>
+    </div>
+  </div>
+</div>
+{% endblock content %}

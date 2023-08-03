@@ -7,13 +7,14 @@ from blog.models import Blog
 
 # Create your views here.
 def index(request):
-    blogs = Blog.objects.all()
+    blogs = Blog.objects.filter(active=True)
     context = {"blogs": blogs}
     return render(request, "main/index.html", context=context)
 
 
 def service(request):
     return render(request, "main/service.html")
+
 
 def contact(request):
     form = ContactForm()
